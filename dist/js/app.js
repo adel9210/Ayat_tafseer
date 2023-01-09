@@ -2,7 +2,8 @@
 $(function () {
     renderPageMappingLinks()
     const displayImageHighlighters = $('.main__display__highlighter')
-    displayImageHighlighters.on('mouseover', (event) => {
+    displayImageHighlighters.on('mouseover click', (event) => {
+        event.preventDefault()
         highlightSoraMappingText(event.target, true)
         highlightTafseerMappingText(event.target, true)
     })
@@ -23,7 +24,7 @@ function renderPageMappingLinks() {
 
 function appendMapLink({top, width, left, ayaTarget, highlightRelationId}){
     $('.main__display').append(`
-            <a href="" style="width: ${width}px; top: ${top}px; left: ${left}px" data-highlight-id="${highlightRelationId}" data-target-ref="2_${ayaTarget}_target" class="main__display__highlighter"></a>    
+            <a style="width: ${width}px; top: ${top}px; left: ${left}px" data-highlight-id="${highlightRelationId}" data-target-ref="2_${ayaTarget}_target" class="main__display__highlighter"></a>    
     `)
 }
 
