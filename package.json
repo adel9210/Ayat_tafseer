@@ -1,0 +1,27 @@
+{
+  "name": "Ayat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/style.scss:dist/css/style.css --style compressed",
+    "cc": "node tools/commands/create_component.js",
+    "uglify-js": "uglifyjs assets/js/app.js -o assets/js/app.min.js -c -m"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "sass": "^1.34.0",
+    "uglify-js": "^3.14.0"
+  }
+}

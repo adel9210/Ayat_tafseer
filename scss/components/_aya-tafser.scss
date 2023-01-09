@@ -1,0 +1,23 @@
+.co-aya-tafseer {
+  margin: 4px auto;
+  border: 1px solid #eee;
+  padding: 4px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #000;
+
+  &.active {
+    background-color: rgb(0 237 232 / 23%);
+  }
+
+  &__aya-number {
+
+  }
+
+  &__aya-text {
+  }
+
+  &:nth-child(odd) {
+    color: #00478e;
+  }
+}
