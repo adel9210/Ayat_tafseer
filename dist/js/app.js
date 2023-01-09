@@ -21,17 +21,20 @@ function renderPageMappingLinks() {
     })
 }
 
-function appendMapLink({top, width, left, ayaTarget}){
+function appendMapLink({top, width, left, ayaTarget, highlightRelationId}){
     $('.main__display').append(`
-            <a href="" style="width: ${width}px; top: ${top}px; left: ${left}px" data-target-ref="2_${ayaTarget}_target" class="main__display__highlighter"></a>    
+            <a href="" style="width: ${width}px; top: ${top}px; left: ${left}px" data-highlight-id="${highlightRelationId}" data-target-ref="2_${ayaTarget}_target" class="main__display__highlighter"></a>    
     `)
 }
 
 function highlightSoraMappingText(element, shouldHighlighted) {
+    const attrId = $(element).attr('data-highlight-id')
+    const highlightRelationElement = $(`[data-highlight-id=${attrId}]`);
+
     if (shouldHighlighted) {
-        $(element).addClass('active')
+        highlightRelationElement.addClass('active')
     } else {
-        $(element).removeClass('active')
+        highlightRelationElement.removeClass('active')
     }
 }
 
@@ -41,10 +44,8 @@ function highlightTafseerMappingText(element, shouldHighlighted) {
     scrollToElement(targetRefElement)
 
     if (shouldHighlighted) {
-        $(element).addClass('active')
         $(targetRefElement).addClass('active')
     } else {
-        $(element).removeClass('active')
         $(targetRefElement).removeClass('active')
     }
 }
